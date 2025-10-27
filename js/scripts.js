@@ -4,9 +4,28 @@ let computerScore = 0
 
 // Function to play a single round.
 function playRound(humanChoice, computerChoice) {
+    // Making human string lowercase.
+    let accurate_humanChoice = humanChoice.toLowerCase();
+    // console.log(accurate_humanChoice)
+    console.log(accurate_humanChoice, computerChoice)
 
+    // Game logic
+    if (accurate_humanChoice == 'rock' & computerChoice == 'rock' || accurate_humanChoice == 'paper' & computerChoice == 'paper' || accurate_humanChoice == 'scissors' & computerChoice == 'scissors') {
+        return `Draw, you both selected ${accurate_humanChoice}.`;
+    }
+    else if (accurate_humanChoice == 'rock' & computerChoice == 'scissors' || accurate_humanChoice == 'paper' & computerChoice == 'rock' || accurate_humanChoice == 'scissors' & computerChoice == 'paper') {
+        return `You win, ${accurate_humanChoice} beats ${computerChoice}!`;
+    }
+    else if (accurate_humanChoice == 'rock' & computerChoice == 'paper' || accurate_humanChoice == 'paper' & computerChoice == 'scissors' || accurate_humanChoice == 'scissors' & computerChoice == 'rock') {
+        return `You lose, ${computerChoice} beats ${accurate_humanChoice}!`;
+    }
 }
-playRound(getComputerChoice(), getHumanChoice());
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+outcome = playRound(humanSelection, computerSelection);
+console.log(outcome)
 
 // Function to obtain a computer choice in the game using the Math function.
 function getComputerChoice() {
@@ -29,8 +48,8 @@ function getComputerChoice() {
         return computer_move;
     }
 }
-// computer_decision = getComputerChoice();
-// console.log(computer_decision)
+// computerSelection = getComputerChoice();
+// console.log(computerSelection)
 
 // Function to obtain a human choice with a prompt.
 function getHumanChoice() {
@@ -39,5 +58,5 @@ function getHumanChoice() {
     // console.log(human_choice)
     return human_choice;
 }
-// human_decision = getHumanChoice();
-// console.log(human_decision)
+// humanSelection = getHumanChoice();
+// console.log(humanSelection)
