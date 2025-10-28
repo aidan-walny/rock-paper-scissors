@@ -8,7 +8,7 @@ function playGame() {
     // Local variable to track games played
     let gamesPlayed = 1
 
-    // While loop to play give rounds.
+    // While loop to play five rounds.
     while (gamesPlayed < 6) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
